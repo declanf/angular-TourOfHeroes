@@ -16,4 +16,9 @@ getHeroes(): Observable<Hero[]> {
   return of(HEROES);
 }
 
+getHero(id : number) : Observable<Hero> {
+  this.messageService.add(`HeroService: fetched hero id=${id}`);
+return of(HEROES.find(x => x.id === id));
+}
+
 }
